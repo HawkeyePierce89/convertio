@@ -1,4 +1,4 @@
-import { Translations } from '../types'
+import { Translations } from '../types';
 
 export const en: Translations = {
   'header.title': 'Image Converter',
@@ -26,4 +26,4 @@ export const en: Translations = {
   'error.loadFailed': 'Failed to load image. Please try another file.',
   'error.conversionFailed': 'Conversion failed. Please try again.',
   'footer.privacy': 'All processing happens in your browser. No files are uploaded to any server.',
-}
+};

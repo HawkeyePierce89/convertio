@@ -1,14 +1,14 @@
-import { vi, beforeEach, afterEach } from 'vitest'
+import { vi, beforeEach, afterEach } from 'vitest';
 
 // Mock virtual:pwa-register module
 vi.mock('virtual:pwa-register', () => ({
-  registerSW: vi.fn(() => vi.fn())
-}))
+  registerSW: vi.fn(() => vi.fn()),
+}));
 
 beforeEach(() => {
-  vi.clearAllMocks()
-})
+  vi.clearAllMocks();
+});
 
 afterEach(() => {
-  vi.restoreAllMocks()
-})
+  vi.restoreAllMocks();
+});

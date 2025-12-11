@@ -1,4 +1,4 @@
-export type Language = 'en' | 'ru' | 'de' | 'es' | 'zh'
+export type Language = 'en' | 'ru' | 'de' | 'es' | 'zh';
 
 export const LANGUAGES: Record<Language, string> = {
   en: 'English',
@@ -6,7 +6,7 @@ export const LANGUAGES: Record<Language, string> = {
   de: 'Deutsch',
   es: 'Español',
   zh: '中文',
-}
+};
 
 export type TranslationKey =
   | 'header.title'
@@ -33,6 +33,6 @@ export type TranslationKey =
   | 'pwa.offlineReady'
   | 'error.loadFailed'
   | 'error.conversionFailed'
-  | 'footer.privacy'
+  | 'footer.privacy';
 
-export type Translations = Record<TranslationKey, string>
+export type Translations = Record<TranslationKey, string>;

@@ -1,4 +1,4 @@
-import { Translations } from '../types'
+import { Translations } from '../types';
 
 export const ru: Translations = {
   'header.title': 'Конвертер изображений',
@@ -26,4 +26,4 @@ export const ru: Translations = {
   'error.loadFailed': 'Не удалось загрузить изображение. Попробуйте другой файл.',
   'error.conversionFailed': 'Ошибка конвертации. Попробуйте ещё раз.',
   'footer.privacy': 'Вся обработка происходит в вашем браузере. Файлы не загружаются на сервер.',
-}
+};
