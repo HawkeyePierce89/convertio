@@ -1,0 +1,32 @@
+{
+  "name": "convertio",
+  "version": "1.0.0",
+  "description": "Browser-based image converter",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "image",
+    "converter",
+    "webp",
+    "jpeg",
+    "png"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.15",
+    "canvas": "^3.2.0",
+    "jsdom": "^27.3.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vite-plugin-pwa": "^1.2.0",
+    "vitest": "^4.0.15"
+  }
+}

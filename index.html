@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Converter</title>
+
+  <!-- PWA Meta Tags -->
+  <meta name="description" content="Browser-based image converter — convert between JPEG, PNG and WebP">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Converter">
+  <meta name="application-name" content="Image Converter">
+  <meta name="msapplication-TileColor" content="#4f46e5">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="/pwa-64x64.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header__content">
+        <h1 data-i18n="header.title">Image Converter</h1>
+        <p class="header__subtitle" data-i18n="header.subtitle">Convert images between JPEG, PNG, and WebP</p>
+      </div>
+      <div class="header__actions">
+        <select class="language-select" id="language-select" aria-label="Select language"></select>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Upload Section -->
+      <section class="upload-section" id="upload-section">
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp" hidden>
+          <div class="drop-zone__content">
+            <svg class="drop-zone__icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+            <p class="drop-zone__text" data-i18n="upload.dragdrop">Drag and drop image here</p>
+            <p class="drop-zone__hint" data-i18n="upload.or">or</p>
+            <button class="btn btn--primary" id="select-file-btn" data-i18n="upload.selectFile">Select File</button>
+            <p class="drop-zone__formats" data-i18n="upload.supportedFormats">JPEG, PNG, WebP, GIF, BMP</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editor Section (hidden until image loaded) -->
+      <section class="editor-section" id="editor-section" hidden>
+        <div class="editor-layout">
+          <!-- Preview Container -->
+          <div class="preview-container" id="preview-container">
+            <div class="preview-panel">
+              <h3 class="preview-panel__title" data-i18n="preview.original">Original</h3>
+              <div class="preview-panel__image-wrapper">
+                <img id="original-preview" alt="Original image">
+              </div>
+              <div class="preview-panel__info" id="original-info"></div>
+            </div>
+            <div class="preview-panel">
+              <h3 class="preview-panel__title" data-i18n="preview.result">Result</h3>
+              <div class="preview-panel__image-wrapper">
+                <img id="result-preview" alt="Converted image">
+              </div>
+              <div class="preview-panel__info" id="result-info"></div>
+            </div>
+          </div>
+
+          <!-- Settings Panel -->
+          <div class="settings-panel" id="settings-panel">
+            <h3 class="settings-panel__title" data-i18n="settings.title">Settings</h3>
+
+            <!-- Format -->
+            <div class="setting-group">
+              <label class="setting-label" for="format-select" data-i18n="settings.outputFormat">Output Format</label>
+              <select class="setting-select" id="format-select">
+                <option value="image/jpeg">JPEG</option>
+                <option value="image/png">PNG</option>
+                <option value="image/webp">WebP</option>
+              </select>
+            </div>
+
+            <!-- Dimensions -->
+            <div class="setting-group">
+              <label class="setting-label" data-i18n="settings.dimensions">Dimensions (px)</label>
+              <div class="dimensions-inputs">
+                <input class="setting-input" type="number" id="width-input" min="1" max="10000" data-i18n-placeholder="settings.width" placeholder="Width">
+                <span class="dimensions-separator">×</span>
+                <input class="setting-input" type="number" id="height-input" min="1" max="10000" data-i18n-placeholder="settings.height" placeholder="Height">
+              </div>
+              <label class="checkbox-label">
+                <input type="checkbox" id="aspect-ratio-checkbox" checked>
+                <span data-i18n="settings.maintainAspect">Maintain aspect ratio</span>
+              </label>
+            </div>
+
+            <!-- Quality -->
+            <div class="setting-group" id="quality-group">
+              <label class="setting-label" for="quality-slider">
+                <span data-i18n="settings.quality">Quality</span>: <span id="quality-value">80</span>%
+              </label>
+              <input class="setting-slider" type="range" id="quality-slider" min="10" max="100" value="80" step="5">
+            </div>
+
+            <!-- Actions -->
+            <div class="actions">
+              <button class="btn btn--primary btn--large" id="convert-btn" data-i18n="actions.convert">Convert</button>
+              <button class="btn btn--success btn--large" id="download-btn" disabled data-i18n="actions.download">Download</button>
+            </div>
+
+            <button class="btn btn--text" id="reset-btn" data-i18n="actions.uploadAnother">Upload another image</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footer.privacy">All processing happens in your browser. No files are uploaded to any server.</p>
+    </footer>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
