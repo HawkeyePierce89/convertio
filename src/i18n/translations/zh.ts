@@ -1,4 +1,4 @@
-import { Translations } from '../types'
+import { Translations } from '../types';
 
 export const zh: Translations = {
   'header.title': '图片转换器',
@@ -26,4 +26,4 @@ export const zh: Translations = {
   'error.loadFailed': '无法加载图片。请尝试其他文件。',
   'error.conversionFailed': '转换失败。请重试。',
   'footer.privacy': '所有处理都在浏览器中进行。没有文件上传到任何服务器。',
-}
+};

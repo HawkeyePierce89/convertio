@@ -1,4 +1,4 @@
-import { Translations } from '../types'
+import { Translations } from '../types';
 
 export const de: Translations = {
   'header.title': 'Bildkonverter',
@@ -7,7 +7,8 @@ export const de: Translations = {
   'upload.or': 'oder',
   'upload.selectFile': 'Datei auswählen',
   'upload.supportedFormats': 'JPEG, PNG, WebP, GIF, BMP',
-  'upload.errorUnsupported': 'Nicht unterstütztes Format. Bitte wählen Sie JPEG, PNG, WebP, GIF oder BMP.',
+  'upload.errorUnsupported':
+    'Nicht unterstütztes Format. Bitte wählen Sie JPEG, PNG, WebP, GIF oder BMP.',
   'settings.title': 'Einstellungen',
   'settings.outputFormat': 'Ausgabeformat',
   'settings.dimensions': 'Abmessungen (px)',
@@ -25,5 +26,6 @@ export const de: Translations = {
   'pwa.offlineReady': 'App ist offline bereit!',
   'error.loadFailed': 'Bild konnte nicht geladen werden. Bitte versuchen Sie eine andere Datei.',
   'error.conversionFailed': 'Konvertierung fehlgeschlagen. Bitte versuchen Sie es erneut.',
-  'footer.privacy': 'Die gesamte Verarbeitung erfolgt in Ihrem Browser. Keine Dateien werden auf einen Server hochgeladen.',
-}
+  'footer.privacy':
+    'Die gesamte Verarbeitung erfolgt in Ihrem Browser. Keine Dateien werden auf einen Server hochgeladen.',
+};

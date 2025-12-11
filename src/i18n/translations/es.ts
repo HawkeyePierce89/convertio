@@ -1,4 +1,4 @@
-import { Translations } from '../types'
+import { Translations } from '../types';
 
 export const es: Translations = {
   'header.title': 'Convertidor de imágenes',
@@ -25,5 +25,6 @@ export const es: Translations = {
   'pwa.offlineReady': '¡La app está lista para trabajar sin conexión!',
   'error.loadFailed': 'No se pudo cargar la imagen. Intente con otro archivo.',
   'error.conversionFailed': 'Error en la conversión. Intente de nuevo.',
-  'footer.privacy': 'Todo el procesamiento ocurre en tu navegador. No se suben archivos a ningún servidor.',
-}
+  'footer.privacy':
+    'Todo el procesamiento ocurre en tu navegador. No se suben archivos a ningún servidor.',
+};
