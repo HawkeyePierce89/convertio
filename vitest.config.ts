@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -6,6 +6,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./src/__tests__/setup.ts'],
     include: ['src/**/*.{test,spec}.ts'],
+    exclude: ['tests/e2e/**'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'html'],
@@ -15,8 +16,8 @@ export default defineConfig({
         'src/**/*.spec.ts',
         'src/__tests__/**',
         'src/vite-env.d.ts',
-        'src/main.ts'
-      ]
-    }
-  }
-})
+        'src/main.ts',
+      ],
+    },
+  },
+});
